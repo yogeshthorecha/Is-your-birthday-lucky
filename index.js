@@ -6,10 +6,15 @@ const outputBox = document.querySelector("#output-box")
 checkButton.addEventListener('click',function(){
     var sum = sumOfDob(dateOfBirth.value);
     var luckyNumberr = luckyNumber.value;
+    if(luckyNumberr >= 0){
     if(sum&&luckyNumberr){
     var luckyOrNot =checkDobIsLucky(luckyNumberr,sum);
     outputBox.innerText = luckyOrNot;
     }else  outputBox.innerText = "Please enter details in both the fields😑"
+    }
+    else{
+        outputBox.innerText = "Please enter positive lucky number😑"
+    }
 })
 function sumOfDob(dateOfBirth){
     dateOfBirth = dateOfBirth.replaceAll("-","");
